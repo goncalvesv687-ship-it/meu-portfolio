@@ -1,0 +1,364 @@
+/* 
+Configuração global:
+Define o box-sizing para facilitar o controle
+de largura e espaçamento dos elementos
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+/* 
+Estilização geral da página
+*/
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f8f3e8;
+    color: #2d2d2d;
+}
+
+/* Menu fixo */ 
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #69542c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    padding: 0 20px;
+    z-index: 10;
+}
+/* Organização dos links do menu */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 960px;
+}
+/* Estilo dos links */
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 14px;
+    white-space: nowrap;
+    letter-spacing: 0.02em;
+    display: inline-flex;
+    align-items: center;
+}
+/* Efeito ao passar o mouse */
+nav a:hover {
+    color: #f5e6c8;
+}
+
+
+/* Conteúdo */
+main {
+    margin-top: 70px;
+    padding: 20px;
+    text-align: center;
+}
+/* Estilo padrão das seções */
+section {
+    padding: 50px;
+    border: 1px solid #ccc;
+    margin: 20px auto;
+    width: 70%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+/* Estilo específico para a seção "Sobre" */
+#sobre {
+    text-align: left;
+}
+/* Organização da foto e texto */
+.sobre-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: flex-start;
+    justify-content: center;
+}
+/* Área da foto */
+.sobre-foto {
+    flex: 0 0 320px;
+}
+/* Estilização da imagem */
+.sobre-foto img {
+    width: 100%;
+    max-width: 320px;
+    border-radius: 16px;
+    object-fit: cover;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+/* Área do texto */
+.sobre-texto {
+    flex: 1;
+    min-width: 280px;
+    max-width: 700px;
+}
+/* Espaçamento dos parágrafos */
+.sobre-texto p {
+    line-height: 1.7;
+    margin-bottom: 18px;
+}
+/* Lista de habilidades */
+.habilidades {
+    margin-top: 20px;
+}
+
+.habilidades h2 {
+    margin-bottom: 12px;
+}
+
+/* Grid das habilidades */
+.habilidades ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(140px, 1fr));
+    gap: 12px;
+}
+/* Estilo dos itens */
+.habilidades li {
+    background: #f5e6c8;
+    border-radius: 10px;
+    padding: 12px 14px;
+}
+/* Estilo específico para a seção "Formação" */
+#formacao {
+    text-align: left;
+}
+
+.formacao-secao {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+}
+/* Cards da formação */
+#formacao .formacao-academica,
+#formacao .cursos-recentes {
+    background: #f5e6c8;
+    border: 1px solid #e2cfaf;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.04);
+}
+
+#formacao h2 {
+    margin-bottom: 18px;
+    color: #1f2b3d;
+}
+/* Remove marcadores padrão */
+#formacao ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#formacao li {
+    background: #f5e6c8;
+    border: none;
+    margin-bottom: 12px;
+    padding-left: 18px;
+    position: relative;
+    line-height: 1.7;
+}
+/* Bolinhas decorativas */
+#formacao li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.9rem;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #69542c;
+}
+/* Estilo específico para a seção "Portfólio" */
+#portfolio {
+    text-align: left;
+}
+/* Grid dos projetos */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+}
+/* Cards dos projetos */
+.portfolio-card {
+    background: #f5e6c8;
+    border: 1px solid #e2cfaf;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.portfolio-card h2 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    color: #1f2b3d;
+}
+
+.portfolio-card p {
+    margin: 16px 0 24px;
+    line-height: 1.7;
+    color: #4a5568;
+}
+/* Link dos projetos */
+.portfolio-card a {
+    align-self: flex-start;
+    text-decoration: none;
+    color: #69542c;
+    font-weight: bold;
+}
+
+.portfolio-card a:hover {
+    text-decoration: underline;
+}
+/* Estilo específico para a seção "Contato" */
+#contato {
+    text-align: left;
+}
+/* Grid dos cards de contato */
+.contato-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.contato-card {
+    background: #f5e6c8;
+    border: 1px solid #e2cfaf;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.04);
+}
+
+.contato-card h2 {
+    margin-top: 0;
+    color: #1a2640;
+}
+
+.contato-card p {
+    margin: 16px 0;
+    line-height: 1.7;
+    color: #4a5568;
+}
+/* Links de contato */
+.contato-card a {
+    display: inline-block;
+    text-decoration: none;
+    color: #69542c;
+    font-weight: bold;
+}
+
+.contato-card a:hover {
+    text-decoration: underline;
+}
+/* Estilo do formulário de contato */
+.contato-formulario {
+    margin-top: 32px;
+    background: #f5e6c8;
+    border: 1px solid #e2cfaf;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+}
+
+.contato-formulario h2 {
+    margin-top: 0;
+    color: #1f2b3d;
+}
+/* Labels do formulário */
+.contato-formulario label {
+    display: block;
+    margin: 18px 0 8px;
+    font-weight: bold;
+    color: #2c3a50;
+}
+/* Campos do formulário */
+.contato-formulario input,
+.contato-formulario textarea {
+    width: 100%;
+    background: #fff5e1;
+    border: 1px solid #e7d7c0;
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-size: 1rem;
+    font-family: Arial, sans-serif;
+    resize: vertical;
+}
+/* Efeito ao clicar nos campos */
+.contato-formulario input:focus,
+.contato-formulario textarea:focus {
+    outline: none;
+    border-color: #d3b995;
+    box-shadow: 0 0 0 3px rgba(229, 201, 166, 0.35);
+}
+/* Altura mínima da mensagem */
+.contato-formulario textarea {
+    min-height: 140px;
+}
+/* Botão de envio */
+.contato-formulario button {
+    margin-top: 18px;
+    padding: 14px 22px;
+    border: none;
+    border-radius: 12px;
+    background: #69542c;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.contato-formulario button:hover {
+    background: #8a6d3b;
+}
+/* Mensagens de status do formulário */
+.form-status {
+    margin-top: 16px;
+    font-size: 0.95rem;
+    color: #1f2b3d;
+}
+/* Mensagem de erro */
+.form-status.error {
+    color: #d93025;
+}
+/* Mensagem de sucesso */
+.form-status.success {
+    color: #148c3c;
+}
+/* Responsividade para telas menores */
+@media (max-width: 860px) {
+    section {
+        width: 90%;
+        padding: 35px;
+    }
+
+    .sobre-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sobre-texto {
+        width: 100%;
+    }
+
+    .habilidades ul {
+        grid-template-columns: 1fr;
+    }
+
+    .formacao-secao {
+        grid-template-columns: 1fr;
+    }
+}
